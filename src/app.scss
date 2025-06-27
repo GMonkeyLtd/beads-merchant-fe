@@ -1,0 +1,156 @@
+/* 全局样式 */
+page {
+  background-color: #F0F0F0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, Roboto, 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  box-sizing: border-box;
+}
+
+view, text, button, input, image, scroll-view {
+  box-sizing: border-box;
+}
+
+/* 重置按钮样式 */
+.taro-button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* 通用工具类 */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+/* 主题色 */
+.primary-color {
+  color: #FF8800;
+}
+
+.success-color {
+  color: #0EC04C;
+}
+
+.warning-color {
+  color: #FFC45D;
+}
+
+.danger-color {
+  color: #C00E0E;
+}
+
+.gray-color {
+  color: #999;
+}
+
+/* 背景色 */
+.primary-bg {
+  background-color: #FF8800;
+}
+
+.success-bg {
+  background-color: #0EC04C;
+}
+
+.warning-bg {
+  background-color: #FFC45D;
+}
+
+.danger-bg {
+  background-color: #C00E0E;
+}
+
+.white-bg {
+  background-color: #FFFFFF;
+}
+
+.gray-bg {
+  background-color: #F0F0F0;
+}

@@ -1,0 +1,460 @@
+.grab-orders-container {
+  background: #F0F0F0;
+  min-height: 100vh;
+}
+
+.header {
+  background: #FFFFFF;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1F1722;
+}
+
+.orders-list {
+  height: calc(100vh - 120px);
+  padding: 12px 16px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-text {
+  font-size: 16px;
+  color: #999;
+}
+
+.order-card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.order-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-tag {
+  background: #FFEDD8;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.status-text {
+  font-size: 11px;
+  font-weight: 350;
+  color: #583408;
+}
+
+.order-no {
+  font-size: 11px;
+  font-weight: 300;
+  color: #1F1722;
+  opacity: 0.8;
+}
+
+.detail-btn {
+  background: rgba(0, 0, 0, 0.04) !important;
+  color: rgba(31, 23, 34, 0.6) !important;
+  border-radius: 44px !important;
+  font-size: 11px !important;
+  font-weight: 350 !important;
+  padding: 6px 12px !important;
+  border: none !important;
+  height: auto !important;
+  line-height: 1.35 !important;
+}
+
+.order-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.order-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.order-image {
+  width: 39px;
+  height: 39px;
+  border-radius: 4px;
+  background: #F5F5F5;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1F1722;
+  opacity: 0.9;
+  font-family: 'Source Han Serif CN', serif;
+  letter-spacing: 1px;
+}
+
+.order-time {
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(31, 23, 34, 0.5);
+  opacity: 0.9;
+}
+
+.order-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F1722;
+}
+
+.order-divider {
+  height: 1px;
+  background: linear-gradient(to right, #F2EFEC, rgba(255, 255, 255, 0.5));
+  margin-bottom: 16px;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: stretch;
+}
+
+.grab-btn {
+  flex: 1;
+  height: 34px;
+  background: #FFC45D !important;
+  color: #3C2000 !important;
+  border: 1px solid rgba(84, 62, 55, 0.09) !important;
+  border-radius: 10px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  &:hover {
+    background: #FFB35D !important;
+  }
+  
+  &:active {
+    background: #FF9E3D !important;
+  }
+}
+
+// 明细弹窗样式
+.detail-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.detail-modal {
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 280px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  gap: 4px;
+}
+
+.order-info-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.order-number {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #1F1722;
+  opacity: 0.9;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.copy-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-img {
+  width: 10px;
+  height: 10px;
+}
+
+.close-btn {
+  width: 20px !important;
+  height: 20px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-line {
+  position: absolute;
+  width: 5px;
+  height: 1.67px;
+  background: #6F6F6F;
+  border-radius: 1px;
+}
+
+.close-line-1 {
+  transform: rotate(45deg);
+}
+
+.close-line-2 {
+  transform: rotate(-45deg);
+}
+
+.modal-divider {
+  height: 1px;
+  background: #F2EFEC;
+  margin: 0 16px;
+}
+
+.product-info {
+  padding: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.product-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  background: #F5F5F5;
+  flex-shrink: 0;
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 2px 0 4px;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.product-name-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.product-name {
+  font-family: 'Source Han Serif CN', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1F1722;
+  line-height: 1.44;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #B49677 0%, #1F2A37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-code {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(31, 23, 34, 0.5);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.product-quantity {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: #1F1722;
+  opacity: 0.9;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.budget-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 4px 0;
+  min-height: 72px;
+}
+
+.budget-text {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(31, 23, 34, 0.5);
+  line-height: 1.2;
+}
+
+.material-list {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 128px;
+}
+
+.material-header {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 0 4px;
+}
+
+.header-name,
+.header-spec {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1F1722;
+  opacity: 0.9;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  flex: 1;
+}
+
+.header-quantity {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1F1722;
+  opacity: 0.9;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: right;
+  flex: 1;
+}
+
+.material-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.material-item {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 5px 4px;
+}
+
+.material-item.even {
+  background: rgba(209, 209, 209, 0.2);
+}
+
+.material-item.odd {
+  background: rgba(230, 222, 209, 0.2);
+}
+
+.item-name,
+.item-spec {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #1F1722;
+  opacity: 0.9;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  flex: 1;
+}
+
+.item-quantity {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #1F1722;
+  opacity: 0.9;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-align: right;
+  flex: 1;
+}
+
+.grab-btn-modal {
+  margin: 16px;
+  height: 34px;
+  background: #FFC45D !important;
+  color: #3C2000 !important;
+  border: 1px solid rgba(84, 62, 55, 0.09) !important;
+  border-radius: 10px !important;
+  font-family: 'Noto Sans SC', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px;
+  padding: 6px 12px !important;
+  
+  &:hover {
+    background: #FFB35D !important;
+  }
+  
+  &:active {
+    background: #FF9E3D !important;
+  }
+} 

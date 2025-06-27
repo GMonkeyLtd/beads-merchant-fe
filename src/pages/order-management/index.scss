@@ -1,0 +1,222 @@
+.order-management-container {
+  background: #F0F0F0;
+  min-height: 100vh;
+}
+
+.tabs-container {
+  background: #FFFFFF;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 16px;
+  overflow: hidden;
+}
+
+.tab-item {
+  flex: 1;
+  padding: 14px 40px;
+  text-align: center;
+  background: #FFFFFF;
+  border-right: 1px solid #E5E5E5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:last-child {
+    border-right: none;
+  }
+  
+  &.active {
+    background: #FFC45D;
+    
+    .tab-text {
+      color: #3C2000;
+      font-weight: 500;
+    }
+  }
+}
+
+.tab-text {
+  font-size: 11px;
+  font-weight: 500;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+.orders-list {
+  height: calc(100vh - 180px);
+  padding: 0 16px 16px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-text {
+  font-size: 16px;
+  color: #999;
+}
+
+.order-card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.order-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-tag {
+  background: #FFEDD8;
+  border-radius: 4px;
+  padding: 2px 6px;
+  min-width: 45px;
+  text-align: center;
+}
+
+.status-text {
+  font-size: 11px;
+  font-weight: 350;
+  color: #583408;
+}
+
+.order-no {
+  font-size: 11px;
+  font-weight: 300;
+  color: #1F1722;
+  opacity: 0.8;
+}
+
+.detail-btn {
+  background: rgba(0, 0, 0, 0.04) !important;
+  color: rgba(31, 23, 34, 0.6) !important;
+  border-radius: 44px !important;
+  font-size: 11px !important;
+  font-weight: 350 !important;
+  padding: 6px 12px !important;
+  border: none !important;
+  height: auto !important;
+  line-height: 1.35 !important;
+}
+
+.order-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.order-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.order-image {
+  width: 39px;
+  height: 39px;
+  border-radius: 4px;
+  background: #F5F5F5;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1F1722;
+  opacity: 0.9;
+  font-family: 'Source Han Serif CN', serif;
+  letter-spacing: 1px;
+}
+
+.order-time {
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(31, 23, 34, 0.5);
+  opacity: 0.9;
+}
+
+.order-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F1722;
+}
+
+.order-divider {
+  height: 1px;
+  background: linear-gradient(to right, #F2EFEC, rgba(255, 255, 255, 0.5));
+  margin-bottom: 16px;
+}
+
+.order-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.call-btn {
+  flex: 1;
+  height: 34px;
+  background: rgba(255, 179, 93, 0.21) !important;
+  color: #713D00 !important;
+  border: 1px solid #FFB35D !important;
+  border-radius: 10px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+}
+
+.cancel-btn {
+  height: 34px;
+  background: #FFE1E1 !important;
+  color: #C00E0E !important;
+  border: 1px solid #C00E0E !important;
+  border-radius: 10px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  padding: 6px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.complete-btn {
+  width: 100%;
+  height: 34px;
+  background: #0EC04C !important;
+  color: #FFFFFF !important;
+  border: 1px solid #0EC04C !important;
+  border-radius: 10px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+} 
