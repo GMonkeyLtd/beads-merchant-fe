@@ -3,7 +3,7 @@ export default {
     'pages/login/index',
     'pages/grab-orders/index',
     'pages/order-management/index',
-    'pages/profile/index'
+    'pages/user-center/index'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -19,15 +19,21 @@ export default {
     list: [
       {
         pagePath: 'pages/grab-orders/index',
-        text: '抢单广场'
+        text: '抢单广场',
+        iconPath: 'assets/icons/grab.svg',
+        selectedIconPath: 'assets/icons/grab-active.svg'
       },
       {
         pagePath: 'pages/order-management/index',
-        text: '订单管理'
+        text: '订单管理',
+        iconPath: 'assets/icons/orders.svg',
+        selectedIconPath: 'assets/icons/orders-active.svg'
       },
       {
-        pagePath: 'pages/profile/index',
-        text: '个人中心'
+        pagePath: 'pages/user-center/index',
+        text: '个人中心',
+        iconPath: 'assets/icons/user-center.svg',
+        selectedIconPath: 'assets/icons/user-center-active.svg'
       }
     ]
   }

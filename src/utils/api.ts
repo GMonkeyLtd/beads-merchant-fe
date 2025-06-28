@@ -5,6 +5,7 @@ import Taro from "@tarojs/taro";
 // setBaseURL("http://gmonkey.ai:8088/api/v1");
 setBaseURL("https://test.qianjunye.com:443/api/v1");
 // setBaseURL("http://192.168.189.246:8088/api/v1");
+import orderList from "../mock/queryOrder.json"
 
 // setIsMock(true)
 
@@ -36,9 +37,9 @@ export interface BaziParams {
   sex?: number;
 }
 
-export interface PersonalizedGenerateParams extends BaziParams {}
+export interface PersonalizedGenerateParams extends BaziParams { }
 
-export interface QuickGenerateParams extends BaziParams {}
+export interface QuickGenerateParams extends BaziParams { }
 
 export interface QuickGenerateByImageParams {
   image_base64: string[];
@@ -93,79 +94,72 @@ export const userApi = {
   getOrderList: () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve({
-          code: 200,
-          message: "查询成功",
-          data: {
-            total: 200, //总共符合条件的订单数
-            page: 1,
-            page_size: 2,
-            orders: [
-              {
-                order_uuid: "20250625155842657587",
-                order_status: "3",
-                price: 999.99,
-                created_at: "2025-06-25 15:58:43",
-                user_info: {
-                  default_contact: 0,
-                  nick_name: "微信用户1",
-                  phone: 19861129871,
-                },
-                design_info: {
-                  design_id: "17",
-                  image_url:
-                    "https://zhuluoji.cn-sh2.ufileos.com/user-images-history/user2/20250625154154.590_a973cdf20002585f04e74afb58f227a1.jpg",
-                  beads_info: [
-                    {
-                      bead_diameter: 8,
-                      color: "棕色",
-                      english: "Yellow Rutilated Quartz 2",
-                      function: "增强自信",
-                      id: "34",
-                      image_url:
-                        "https://zhuluoji.cn-sh2.ufileos.com/beads/huyanshi2.png",
-                      name: "虎眼石 2",
-                      wuxing: "土",
-                    },
-                  ],
-                  beads_number: 1,
-                  word_info: {
-                    bead_ids_deduplication: [
-                      {
-                        color: "棕色",
-                        english: "Yellow Rutilated Quartz 2",
-                        function: "稳定情绪",
-                        id: "34",
-                        image_url:
-                          "https://zhuluoji.cn-sh2.ufileos.com/beads/%E8%99%8E%E7%9C%BC%E7%9F%B32.png",
-                        name: "虎眼石 2",
-                        wuxing: "土",
-                      },
-                      {
-                        color: "棕色",
-                        english: "Yellow Rutilated Quartz 2",
-                        function: "增强自信",
-                        id: "34",
-                        image_url:
-                          "https://zhuluoji.cn-sh2.ufileos.com/beads/%E8%99%8E%E7%9C%BC%E7%9F%B32.png",
-                        name: "虎眼石 2",
-                        wuxing: "土",
-                      },
-                    ],
-                    bracelet_name: "虎眼守护",
-                    recommendation_text:
-                      "虎眼石手串，土行能量充沛，助你稳定情绪，增强自信，守护平安。",
-                  },
-                },
-              },
-            ],
-          },
-        });
+        resolve(orderList);
       }, 1000);
     });
 
     // return http.post("/merchant/getorderlist");
   },
+
+  grabOrder: (orderId: string) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          "code":200,
+          "message":"success",
+          "data":{}
+        });
+      }, 1000);
+    });
+
+    // return http.post("/merchant/graborder", { order_uuid: orderId });
+  },
+  cancelOrder: (orderId: string) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          "code":200,
+          "message":"success",
+          "data":{}
+        });
+      }, 1000);
+    });
+
+    // return http.post("/merchant/cancelorder", { order_uuid: orderId });
+  },
+  completeOrder: (orderId: string) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          "code":200,
+          "message":"success",
+          "data":{}
+        });
+      }, 1000);
+    });
+
+    // return http.post("/merchant/finishorder", { order_uuid: orderId });
+  },
+
+  getMerchantInfo: () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          "code":200,
+          "message":"success",
+          "data":{
+            "merchant_name":"东海县亿特珠宝有限公司",
+            "balance":10000.00,
+            "phone":"13900139002",
+            "credit":5.00,
+            "address":"xxxx"
+          }
+        });
+      }, 1000);
+    });
+
+    // return http.post("/merchant/getmerchantinfo");
+  },  
 };
 
 // 导出所有API

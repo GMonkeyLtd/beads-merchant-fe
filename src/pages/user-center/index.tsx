@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { View, Text, Button, Image } from '@tarojs/components'
 import Taro, { showToast, showModal } from '@tarojs/taro'
+import logo from '@/assets/icons/logo.svg'
 import './index.scss'
+import api from '@/utils/api'
 
 interface UserInfo {
   name: string
@@ -11,7 +13,7 @@ interface UserInfo {
   token: string
 }
 
-export default function Profile() {
+export default function UserCenter() {
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -23,7 +25,11 @@ export default function Profile() {
     try {
       const storedUserInfo = Taro.getStorageSync('userInfo')
       if (storedUserInfo) {
-        setUserInfo(storedUserInfo)
+        api.user.getMerchantInfo().then((res: any) => {
+          if (res.code === 200) {
+            setUserInfo(res.data)
+          }
+        })  
       } else {
         // 如果没有用户信息，跳转到登录页
         Taro.navigateTo({
@@ -55,13 +61,6 @@ export default function Profile() {
     })
   }
 
-  const handleBalanceDetail = () => {
-    showModal({
-      title: '余额明细',
-      content: `当前余额：¥${userInfo?.balance.toFixed(2) || '0.00'}\n\n最近收入：\n• 订单ADX2333: +¥299.00\n• 订单ADX2334: +¥199.00`,
-      showCancel: false
-    })
-  }
 
   const handleEditProfile = () => {
     showToast({
@@ -132,34 +131,33 @@ export default function Profile() {
     <View className="profile-container">
       <View className="profile-header">
         <View className="user-info">
-          <Image 
+          <View 
             className="avatar"
-            src={userInfo.avatar || 'https://via.placeholder.com/80x80?text=头像'}
-            mode="aspectFill"
-          />
+            style={{ width: '60px', height: '60px',fontSize: '24px',fontWeight: 'bold',color: '#ffffff',display: 'flex',alignItems: 'center',justifyContent: 'center',borderRadius: '50%' }}
+          >
+            {userInfo.merchant_name?.slice(0, 1) || "商家"}
+          </View>
           <View className="user-details">
-            <Text className="user-name">{userInfo.name}</Text>
+            <Text className="user-name">{userInfo.merchant_name}</Text>
             <Text className="user-phone">{userInfo.phone}</Text>
           </View>
-          <Button 
+          {/* <Button 
             className="edit-btn"
             size="mini"
             onClick={handleEditProfile}
           >
             编辑
-          </Button>
+          </Button> */}
         </View>
       </View>
       
       <View className="balance-section">
-        <View className="balance-card" onClick={handleBalanceDetail}>
+        <View className="balance-card">
           <View className="balance-info">
             <Text className="balance-label">账户余额</Text>
             <Text className="balance-amount">¥{userInfo.balance.toFixed(2)}</Text>
           </View>
-          <View className="balance-arrow">
-            <Text className="arrow-text">›</Text>
-          </View>
+          
         </View>
         
         <Button 
@@ -171,7 +169,7 @@ export default function Profile() {
         </Button>
       </View>
       
-      <View className="menu-section">
+      {/* <View className="menu-section">
         <View className="menu-item" onClick={handleOrderHistory}>
           <View className="menu-info">
             <Text className="menu-icon">📋</Text>
@@ -195,7 +193,7 @@ export default function Profile() {
           </View>
           <Text className="menu-arrow">›</Text>
         </View>
-      </View>
+      </View> */}
     </View>
   )
 } 

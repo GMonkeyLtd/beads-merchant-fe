@@ -2,6 +2,7 @@ import { View, Text, Image } from '@tarojs/components'
 import './index.scss'
 import signalBars from '../../assets/icons/signal-bars.svg'
 import signalRed from '../../assets/icons/signal-red.svg'
+import logo from '@/assets/icons/logo.svg';
 
 interface HeaderProps {
   title?: string
@@ -15,14 +16,14 @@ export default function Header({ title = '商家管理后台', showSignal = true
         <View className="signal-group">
           <Image 
             className="signal-bars" 
-            src={signalBars}
+            src={logo}
             mode="aspectFit"
           />
-          <Image 
+          {/* <Image 
             className="signal-red" 
             src={signalRed}
             mode="aspectFit"
-          />
+          /> */}
         </View>
       )}
       
