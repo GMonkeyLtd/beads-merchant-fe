@@ -11,7 +11,7 @@ interface HeaderProps {
 
 export default function Header({ title = '商家管理后台', showSignal = true }: HeaderProps) {
   return (
-    <View className="header-container">
+    <View className="top-header-container">
       {showSignal && (
         <View className="signal-group">
           <Image 
@@ -27,9 +27,9 @@ export default function Header({ title = '商家管理后台', showSignal = true
         </View>
       )}
       
-      <View className="separator" />
+      <View className="top-separator" />
       
-      <Text className="header-title">{title}</Text>
+      <Text className="top-header-title">{title}</Text>
     </View>
   )
 } 

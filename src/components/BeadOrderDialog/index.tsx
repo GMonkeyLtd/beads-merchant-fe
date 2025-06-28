@@ -49,7 +49,7 @@ const BeadOrderDialog: React.FC<BeadOrderDialogProps> = ({
     <View className='bead-order-dialog-overlay'>
       <View className='bead-order-dialog'>
         {/* 头部 */}
-        <View className='dialog-header'>
+        <View className='bead-order-dialog-header'>
           <View className='order-dialog-info'>
             <Text className='order-number'>订单号：{orderNumber}</Text>
             <View className='copy-icon'>
@@ -109,7 +109,7 @@ const BeadOrderDialog: React.FC<BeadOrderDialogProps> = ({
         <View className='divider'></View>
 
         {/* 底部按钮 */}
-        <View className='dialog-footer'>
+        <View className='bead-order-dialog-footer'>
           <View className='confirm-btn' onClick={onClose}>
             <Text className='confirm-text'>关闭</Text>
           </View>

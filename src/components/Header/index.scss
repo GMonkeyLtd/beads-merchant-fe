@@ -1,4 +1,4 @@
-.header-container {
+.top-header-container {
   width: 100%;
   height: 54px;
   display: flex;
@@ -34,14 +34,14 @@
     }
   }
   
-  .separator {
+  .top-separator {
     width: 1px;
     height: 8px;
     background-color: #5D5D5D;
     flex-shrink: 0;
   }
   
-  .header-title {
+  .top-header-title {
     font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 16px;
